@@ -1,0 +1,116 @@
+# entropy (H)
+import math
+
+def entropy(feature, dataset):
+    values = dataset[feature].value_counts()
+    print('Calculating Entropy of: ',feature)
+    print(values)
+    Total=0
+    for i in values:
+        Total = Total + i;
+    print('Total obseravtion are ', Total)
+
+    Total_Prob = 0
+    for i in values:
+        Indiviudal_Prob=(i/Total)*math.log(i/Total,2);
+        Total_Prob = Total_Prob + Indiviudal_Prob
+        Entropy = -round((Total_Prob),2)
+    print('Entropy of ',feature,' is ',Entropy)
+    print('\n')
+
+entropy('buying', edf)
+
+entropy('maint',edf)
+
+entropy('doors',edf)
+
+entropy('persons',edf)
+
+entropy('lug_boot',edf)
+
+entropy('safety',edf)
+
+entropy('evaluation',edf)
+
+
+
+
+# information gain (IG)
+
+def IG(feature, target, dataset, measure):
+    vals,counts= np.unique(edf[feature],return_counts=True)   #Find the unique values
+    
+    print('Values is  :',vals)
+    print('Its count  :',counts)
+    for i in range(len(vals),):
+        print(counts[i]/np.sum(counts)*gini(feature,dataset))
+#         weighted_gini = np.sum([(counts[i]/np.sum(counts))*gini(dataset.where(dataset[feature]==vals[i]).dropna()[target],dataset)])
+#         print(weighted_gini)
+# Total_Gini = gini('evaluation',edf)
+
+
+
+# IG('buying','evaluation', edf, 'gini') 
+
+IG('buying','evaluation', edf, 'gini') 
+print('\n')
+IG('maint','evaluation', edf, 'gini') 
+print('\n')
+IG('doors','evaluation', edf, 'gini') 
+print('\n')
+IG('lug_boot','evaluation', edf, 'gini')
+print('\n')
+IG('safety','evaluation', edf, 'gini') 
+print('\n')
+IG('evaluation','evaluation', edf, 'gini') 
+
+
+# gini index (Gini)
+
+def gini(feature, dataset):
+    """Calculates the gini index of a feature in a given dataset.
+    
+    Parameters
+    ----------
+    feature: str
+        name of the feature
+    dataset: pd.DataFrame
+        dataframe for the dataset
+    Returns
+    -------
+    float
+        gini index for the feature in the dataset
+    """
+    ##your implementation goes here
+
+def gini(feature, dataset):
+    values = dataset[feature].value_counts()
+    print('Calculating Gini of: ',feature)
+    print(values)
+    Total=0
+    for i in values:
+        Total = Total + i;
+    print('Total obseravtion are ', Total)
+
+    Total_Prob = 0
+    Indiviudal_Prob=0
+    for i in values:
+        Indiviudal_Prob  = Indiviudal_Prob + (i/Total)*(i/Total);
+    Total_Prob = round((1- Indiviudal_Prob),2)
+
+    print('Gini of ',feature,' is ',Total_Prob)
+    print('\n')
+
+gini('buying', edf)
+
+gini('maint',edf)
+
+gini('doors',edf)
+
+gini('persons',edf)
+
+gini('lug_boot',edf)
+
+gini('safety',edf)
+
+gini('evaluation',edf)     

@@ -1,0 +1,27 @@
+Inductive Bias - The assumptions we make for the model selection is called Inductive Bias of a ML algorithm.
+Origial Answer- The set of assumptions that defines the model selection criteria of a machine learning algorithm is
+                               known as the inductive bias of the machine learning algorithm. 
+
+KNN - A classification algoritham.
+             K nearest neighbour's algorithm is a lazy learner algrithams and Supervised Learning Technique that helps to label or Classify a new 
+             input based on its learnings from the model that is trained on the past data. This algorithm takes K a number as an input for 
+             classifying or labelling the new inputs.
+
+Machine Learning is ill-posed Problem.
+
+A Machine Learning Algorithm searches all the possible set of models and selects the best model that is in consistent with the data that
+we are building the model for. This Model selection is based on the two features of the data they are the Descriptive features that describe
+the data and the Target feature that we ar trying to predict. It is argued that Machine Learning is ill- posed problem.
+Primary reasons why we say that Machine Learning is ill posed are
+ 1. All the Machine Learning Model uses large datasets for building a Model. These Datasets involves some irregularites these are 
+     called as Noise in the Data.This noise present in the data leads us in making the wrong predictins.
+     With these noises existing in the data we build our model and predict the outcome. 
+2. The other reason we say is about the Training Data. In general we take training data and testing data ratio as 75:25. We can observe that 
+    we are not building the model on the entire data, Hence we can say that training data will never be used to make an unique solution
+    because we are not the taking the complete data but a part of the data for building the model. Where we can miss some important 
+    data that is not present in the training dataset. 
+
+
+
+
+ 
